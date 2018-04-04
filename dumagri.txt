@@ -1,0 +1,19 @@
+<?php
+
+include 'connection.php';
+if(isset($_GET['Landid'])){
+	  
+                echo $_GET['Landid'];
+                        $id1=$_REQUEST['Landid'];
+						
+						$sql3=mysqli_query($con,"SELECT * FROM booking,landregister WHERE remarks='Booked' and booking.Landid='$id' and landregister.Landid='$id1'");
+						while($row=mysqli_fetch_array($sql3))
+				  {
+				  $v= $row['remarks'];
+				  $cust=$row['cust_user'];
+                  $d=$row['email'];
+                  $date=$row['date'];
+							   
+				  }
+				  echo $v;
+				  ?>
